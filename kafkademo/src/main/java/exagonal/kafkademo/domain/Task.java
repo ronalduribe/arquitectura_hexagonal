@@ -1,6 +1,8 @@
-package com.exagonal.tasks.domain.model;
+package exagonal.kafkademo.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.time.LocalDateTime;
 
@@ -21,7 +23,6 @@ public class Task {
         this.completed = completed;
     }
 
-    // Getters and setters
 
     public Long getId() {
         return id;
@@ -62,4 +63,17 @@ public class Task {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
+
+
+//    @Override
+//    public String toString() {
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        try {
+//            return objectMapper.writeValueAsString(this);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//            return "{}";
+//        }
+//    }
+
 }
