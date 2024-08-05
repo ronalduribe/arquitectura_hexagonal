@@ -103,3 +103,6 @@ Es importante realizar pruebas de integración para asegurar el correcto funcion
 
 ## Conclusiones
 La arquitectura hexagonal proporciona un enfoque estructurado para el diseño de aplicaciones, fomentando la separación de responsabilidades y facilitando el mantenimiento y escalabilidad del software. Al seguir esta arquitectura, la aplicación de gestión de tareas logra una mayor modularidad, lo que permite realizar cambios y extensiones de manera más sencilla y sin afectar otras partes del sistema.
+
+## swagger
+http://localhost:8080/swagger-ui/index.html#/task-controller/getAllTasks
