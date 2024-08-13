@@ -8,11 +8,14 @@ import com.exagonal.tasks.domain.ports.in.GetAdditionalTaskInfoUseCase;
 import com.exagonal.tasks.domain.ports.in.RetrieveTaskUseCase;
 import com.exagonal.tasks.domain.ports.in.UpdateTaskUseCase;
 
+import com.alej.contract.api.PricesApi;
+
 import java.util.List;
 import java.util.Optional;
 
 public class TaskService implements CreateTaskUseCase, RetrieveTaskUseCase, UpdateTaskUseCase, DeleteTaskUseCase, GetAdditionalTaskInfoUseCase {
 
+    private final PricesApi pricesApi;
     private final CreateTaskUseCase createTaskUseCase;
     private final RetrieveTaskUseCase retrieveTaskUseCase;
     private final UpdateTaskUseCase updateTaskUseCase;
@@ -58,4 +61,8 @@ public class TaskService implements CreateTaskUseCase, RetrieveTaskUseCase, Upda
     public AdditionalTaskInfo getAdditionalTaskInfo(Long taskId) {
         return getAdditionalTaskInfoUseCase.getAdditionalTaskInfo(taskId);
     }
+
+
+
+
 }

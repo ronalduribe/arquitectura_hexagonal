@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Local
+paths:
+  /price:
+    get:
+      tags:
+        - prices
+      description: get list of prices
+      operationId: getPrices
+      parameters:
+        - name: applicationDate
+          in: query
+          required: true
+          schema:
+            type: OffsetDateTime
+          example: 2020-06-14T10:00:00.000
+          description: Date in format YYYY-MM-dd'T'HH:mm:ss
+        - name: product
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: Product id
+        - name: brand
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: Brand id
+      responses:
+        "200":
+          description: successful
+          content:
+            'application/json':
+              schema:
+                $ref: './model/price.model.yaml#/Price'
+        "404":
+          description: Validation error
+          content:
+            'text/plain':
+              schema:
+                $ref: './model/error.model.yaml#/Error'
